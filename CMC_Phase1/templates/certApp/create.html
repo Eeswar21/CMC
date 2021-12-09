@@ -1,0 +1,11 @@
+<html>
+{% extends 'certApp/base.html' %}
+{% block content %}
+  <h1> Add New Certificate </h1>
+  <form method = 'POST'>
+    {{form.as_p}}
+    {% csrf_token %}
+  <input type="submit" value="Add Certificate">
+  </form>
+  {% endblock %}
+</html>

@@ -1,0 +1,30 @@
+<html>
+{% extends 'certApp/base.html' %}
+{% block content %}
+  <h1> Certificate Details </h1>
+  <table>
+  <thead>
+    <th> Certificate Name </th>
+    <th> Certificate Issuer </th>
+    <th> Certificate Receiver </th>
+    <th> Certificate Given Date </th>
+    <th> Certificate Expiry Date </th>
+    <th> Certificate Renewal Team </th>
+    <th> Certificate Status </th>
+  </thead>
+  <tr>
+  {% for cert in certificate %}
+  <td> {{cert.cname}} </td>
+  <td> {{cert.cissuer}} </td>
+  <td> {{cert.creceiver}} </td>
+  <td> {{cert.cgivendate}} </td>
+  <td> {{cert.cexpirydate}} </td>
+  <td> {{cert.crenewalteam}} </td>
+  <td> {{cert.cstatus}} </td>
+  <td> <a href="/update/{{cert.id}}"> Update </a> <a href="/delete/{{cert.id}}"> Delete </a> </td>
+  </tr>
+  {% endfor %}
+  </table>
+  <a href="/add"> <button type="button"> Add New Certificate </button> </a>
+  {% endblock %}
+</html>

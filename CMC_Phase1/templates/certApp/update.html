@@ -1,0 +1,17 @@
+<html>
+{% extends 'certApp/base.html' %}
+{% block content %}
+  <h1> Update Certificate Details </h1>
+  <form method="POST">
+  Certificate Name <input type="text" name="cname" value="{{cert.cname}}">
+  Certificate Issuer <input type="text" name="cissuer" value="{{cert.cissuer}}">
+  Certificate Receiver <input type="text" name="creceiver" value="{{cert.creceiver}}">
+  Certificate Given Date <input type="text" name="cgivendate" value="{{cert.cgivendate}}">
+  Certificate Expiry Date <input type="text" name="cexpirydate" value="{{cert.cexpirydate}}">
+  Certificate Renewal Team <input type="text" name="crenewalteam" value="{{cert.crenewalteam}}">
+  Certificate Status <input type="text" name="cstatus" value="{{cert.cstatus}}">
+  {% csrf_token %}
+  <input type="submit" value="Update Certificate">
+  </form>
+  {% endblock %}
+</html>
